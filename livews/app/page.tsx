@@ -1,7 +1,8 @@
-// Chunk 1: Display the editor on the homepage
-// Purpose: Render the Editor component so the user can type
-import Editor from "@/components/Editor";
+// Chunk 3: Render the EditorContainer instead of Editor
+// Purpose: Prepare the app for WebSocket syncing
+
+import EditorContainer from "@/components/EditorContainer";
 
 export default function Home() {
-  return <Editor />;
+  return <EditorContainer />;
 }

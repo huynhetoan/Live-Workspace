@@ -1,18 +1,18 @@
-// Chunk 2: Add typing state
-// Purpose: Store the user's text in React state so we can sync it later
+// Chunk 3: Editor now receives text + setText from parent
+// Purpose: Make Editor a controlled component for real-time syncing
 
-import { useState } from "react";
+interface EditorProps {
+  text: string;
+  setText: (value: string) => void;
+}
 
-export default function Editor() {
-  // Local state for the text the user types
-  const [text, setText] = useState("");
-
+export default function Editor({ text, setText }: EditorProps) {
   return (
     <textarea
       className="w-full h-screen p-4 text-lg outline-none resize-none"
       placeholder="Start typing..."
-      value={text} // textarea shows the state
-      onChange={(e) => setText(e.target.value)} // update state on typing
+      value={text}
+      onChange={(e) => setText(e.target.value)}
     />
   );
 }
