@@ -9,7 +9,7 @@ export function useWebSocket(onMessage: (msg: string) => void) {
 
   useEffect(() => {
     // Connect to WebSocket server
-    const socket = new WebSocket("ws://localhost:3001");
+    const socket = new WebSocket("wss://fantastic-spork-5ggx96wgg7vghv4jp-3001.app.github.dev");
     socketRef.current = socket;
 
     socket.onopen = () => {
